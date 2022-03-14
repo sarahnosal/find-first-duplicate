@@ -1,5 +1,16 @@
+require 'set'
+
 def find_first_duplicate(arr)
+
   # type your code in here
+  first_dupe = Set.new
+
+  arr.each do |item|
+    return item if first_dupe.include?(item)
+    first_dupe.add(item)
+  end
+
+  -1
 end
 
 if __FILE__ == $PROGRAM_NAME
